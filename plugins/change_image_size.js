@@ -2,7 +2,7 @@ const gm = require('gm')
 const fs = require('fs')
 const path = require('path')
 
-// 修改图片大小
+// 批量修改图片大小
 function changeImageSize(path, width = 500, height = 500, quality = 100, isProportion = true) {
 	if(!path) {
 		console.log("请填写路径")

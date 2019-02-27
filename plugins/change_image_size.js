@@ -19,7 +19,7 @@ function changeImageSize(path, width = 500, height = 500, quality = 100, isPropo
 		return new Promise((resolve, reject) => {
 			fileNames.forEach(value => {
 				gm(`${path}/${value}`)
-				.resize(width, height, isProportion? "" : "!")
+				.resize(width, height, isProportion ? "" : "!")
 				.setFormat('jpg')
 				.quality(quality <= 100 ? quality : 100)
 				.write(`${path}/${value}`, err => {

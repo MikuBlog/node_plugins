@@ -11,8 +11,8 @@ function updateFileName(path, fileName, suffix, initialIndex = 0) {
         })
     }).then((fileNames) => {
         fileNames.forEach((value, index) => {
-            const oldPath = path + "/" + value
-            const newPath = path + "/" + fileName + (index + initialIndex) + "." + suffix
+            const oldPath = `${path}/${value}`
+            const newPath = `${path}/${fileName}${(index + initialIndex)}.${suffix}`
             fs.rename(oldPath, newPath, (err) => {
                 if(err) {
                     throw new Error(err)
@@ -22,6 +22,7 @@ function updateFileName(path, fileName, suffix, initialIndex = 0) {
     }).catch((err) => {
         console.log(err)
     })
+	
 }
 
 module.exports = {
